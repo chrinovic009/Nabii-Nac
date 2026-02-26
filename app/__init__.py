@@ -61,38 +61,7 @@ def create_app(config="app.config.Config"):
     @app.before_request
     def start_timer():
         g.start_time = time.time()
-    
-    def create_default_admin():
-        ADMIN_EMAIL = os.getenv("ADMIN_EMAIL")
-        ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
 
-        if not ADMIN_EMAIL or not ADMIN_PASSWORD:
-            raise ValueError("ADMIN_EMAIL or ADMIN_PASSWORD not set")
-
-        existing_user = User.query.filter_by(email=ADMIN_EMAIL).first()
-
-        if existing_user:
-            return False  # L'admin existe déjà
-
-        hashed_password = bcrypt.generate_password_hash(ADMIN_PASSWORD).decode('utf-8')
-
-        admin_user = User(
-            email=ADMIN_EMAIL,
-            name="Super",
-            family_name="Admin",
-            password_hash=hashed_password,
-            auth_provider="local",
-            is_active=True
-        )
-
-        db.session.add(admin_user)
-
-        try:
-            db.session.commit()
-            return True  # Créé avec succès
-        except IntegrityError:
-            db.session.rollback()
-            return False
     # =========================
     # AFTER REQUEST (LOG + SECURITY)
     # =========================
@@ -174,7 +143,6 @@ def create_app(config="app.config.Config"):
 
     with app.app_context():
         db.create_all()
-        create_default_admin()
 
     @login_manager.user_loader
     def load_user(user_id):
