@@ -212,7 +212,7 @@
 						<div class="course-thumb">
 							<img src="../../static/home/img/course/6.png" alt="">
 							<div class="course-cat">
-								<span>BUREAUTIQUE</span>
+								<a href="/formation_1"><span>BUREAUTIQUE</span></a>
 							</div>
 						</div>
 						<div class="course-info">
@@ -302,46 +302,37 @@
 
 
 		<!-- Fact section -->
-		<section class="fact-section spad set-bg" data-setbg="../../static/home/img/fact-bg.jpg">
+		<section class="fact-section text-center set-bg" data-setbg="../../static/home/img/fact-bg.jpg">
 			<div class="container">
-				<div class="row">
-					<div class="col-sm-6 col-lg-3 fact">
-						<div class="fact-icon">
-							<i class="ti-crown"></i>
+
+				<div class="row justify-content-center">
+					<div class="col-lg-8">
+
+						<h2 class="text-white fw-bold mb-3">
+							Prêt à lancer votre appel ou collaborer avec notre réseau ?
+						</h2>
+
+						<p class="text-white mb-4" style="font-size:18px;">
+							Entreprises, organisations et particuliers peuvent publier un appel,
+							rechercher des compétences ou collaborer avec les membres du réseau
+							NABII-NAC pour concrétiser leurs projets.
+						</p>
+
+						<div class="d-flex justify-content-center gap-3 flex-wrap">
+
+							<a href="/action" class="btn btn-primary btn-lg px-4">
+								Appel à l'action
+							</a>
+
+							<a href="/portfolio" class="btn btn-outline-light btn-lg px-4">
+								Nos Projets
+							</a>
+
 						</div>
-						<div class="fact-text">
-							<h2>10</h2>
-							<p>ANS</p>
-						</div>
-					</div>
-					<div class="col-sm-6 col-lg-3 fact">
-						<div class="fact-icon">
-							<i class="ti-briefcase"></i>
-						</div>
-						<div class="fact-text">
-							<h2>80</h2>
-							<p>PROFESSEURS</p>
-						</div>
-					</div>
-					<div class="col-sm-6 col-lg-3 fact">
-						<div class="fact-icon">
-							<i class="ti-user"></i>
-						</div>
-						<div class="fact-text">
-							<h2>500</h2>
-							<p>ETUDIANTS</p>
-						</div>
-					</div>
-					<div class="col-sm-6 col-lg-3 fact">
-						<div class="fact-icon">
-							<i class="ti-pencil-alt"></i>
-						</div>
-						<div class="fact-text">
-							<h2>800+</h2>
-							<p>LESSONS</p>
-						</div>
+
 					</div>
 				</div>
+
 			</div>
 		</section>
 		<!-- Fact section end-->
@@ -431,8 +422,6 @@
 			{% include 'includes/home/footer-home.html' %}
 		</footer>
 		<!-- Footer section end-->
-
-
 
 		<!--====== Javascripts & Jquery ======-->
 		{% include 'includes/home/scripts-home.html' %}

@@ -703,53 +703,87 @@ ol {
 	Fact Section
 -----------------------*/
 
+/* section CTA améliorée */
 .fact-section {
-	background-position: center center;
-	position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 120px 0;
 }
 
+/* overlay sombre + couleur primaire */
 .fact-section:after {
-	position: absolute;
-	content: '';
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: #000;
-	opacity: 0.8;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* overlay premium noir + orange */
+    background: linear-gradient(
+        rgba(0,0,0,0.75),
+        rgba(1, 4, 79, 0.55)
+    );
 }
 
+/* garder le contenu au-dessus de l'overlay */
 .fact-section .container {
-	position: relative;
-	z-index: 1;
+    position: relative;
+    z-index: 2;
 }
 
-.fact {
-	text-align: center;
+/* bloc texte */
+.fact-section h2 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
 }
 
-.fact-icon {
-	font-size: 48px;
-	color: #fff;
-	width: 50px;
-	display: inline-block;
+.fact-section p {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 35px;
+    opacity: 0.95;
 }
 
-.fact-text {
-	padding-left: 20px;
-	display: inline-block;
-	text-align: left;
+/* boutons */
+.fact-section .btn {
+    border-radius: 40px;
+    padding: 14px 34px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.fact-text h2 {
-	color: #f6783a;
-	font-weight: 400;
+/* bouton principal */
+.fact-section .btn-primary {
+    background: #f6783a;
+    border: none;
 }
 
-.fact-text p {
-	margin-bottom: 0;
-	text-transform: uppercase;
-	color: #fff;
+.fact-section .btn-primary:hover {
+    background: #ff8248;
+    transform: translateY(-3px);
+}
+
+/* bouton secondaire */
+.fact-section .btn-outline-light {
+    border-width: 2px;
+}
+
+.fact-section .btn-outline-light:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* espacement entre les boutons */
+.fact-section .cta-buttons {
+    margin-top: 15px;
 }
 
 /*---------------------
@@ -1935,3 +1969,216 @@ ol {
 .enquete-slider .owl-nav i{
     font-size:20px;
 }
+
+/* HERO CTA */
+.cta-hero{
+    background: linear-gradient(rgba(0,0,0,0.55),
+                                rgba(0,0,0,0.55)),
+                url("/static/home/img/cta-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 500px;
+    padding: 120px 0;
+}
+
+
+/* titre */
+
+.cta-hero h2{
+    font-size: 42px;
+    font-weight: 700;
+}
+
+
+/* texte */
+
+.cta-hero p{
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* boutons */
+
+.cta-buttons .btn{
+    border-radius: 40px;
+    padding: 14px 32px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+
+/* bouton principal */
+
+.cta-buttons .btn-primary{
+    background:#f6783a;
+    border:none;
+}
+
+
+.cta-buttons .btn-primary:hover{
+    background:#ff8248;
+    transform:translateY(-2px);
+}
+
+
+/* bouton outline */
+
+.cta-buttons .btn-outline-light:hover{
+    background:#fff;
+    color:#000;
+}
+
+/* Pour la description du cours
+/* Bouton gradient moderne */
+.btn-gradient {
+  background: linear-gradient(45deg, #f6783a, #ff9a56);
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-gradient:hover {
+  background: linear-gradient(45deg, #ff9a56, #f6783a);
+  transform: translateY(-2px);
+}
+
+/* Icônes rondes pour les objectifs */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6783a;
+  color: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  font-size: 16px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+.icon-circle:hover {
+  background: #ff9a56;
+  transform: scale(1.1);
+}
+
+/* Cards modernes */
+.card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Pour le programme du cours
+/* Cards modules */
+.module-card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Titres modules */
+.card-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Liste avec icônes */
+.list-unstyled li {
+  font-size: 1rem;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+}
+.list-unstyled i {
+  font-size: 1.2rem;
+}
+
+/* Pour la fact du cours */
+.fact-section {
+  background: #f9f9f9;
+}
+
+.fact-item {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.fact-item i {
+  font-size: 40px;
+  color: #f6783a; /* couleur Unica */
+  display: block;
+}
+
+.fact-item h4 {
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+.fact-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.fact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Pour les resources du cours */
+.resource-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.resource-card i {
+  font-size: 40px;
+  color: #f6783a; /* couleur Unica */
+}
+.resource-card h6 {
+  font-weight: 600;
+  margin-top: 10px;
+}
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Pour le formulaire */
+/* Bouton gradient moderne */
+.btn-gradient {
+  background: linear-gradient(45deg, #f6783a, #ff9a56);
+  color: #fff;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-gradient:hover {
+  background: linear-gradient(45deg, #ff9a56, #f6783a);
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+

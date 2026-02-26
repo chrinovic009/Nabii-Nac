@@ -68,3 +68,26 @@ def contact():
         'home/contact.html',
         page_active="contact",
     )
+
+# pour la page d'action
+@blueprint.route('/action')
+def action():
+
+    return render_template(
+        'home/action.html',
+        page_active="action",
+    )
+
+
+# ==================================== FORMATIONS =======================================
+
+# pour la page de formation-1
+@blueprint.route('/formation_1')
+def formation_1():
+
+    return render_template(
+        'home/formation-1.html',
+        page_active="formation_1",
+    )
+
+# ================================== FIN FORMATIONS =====================================
