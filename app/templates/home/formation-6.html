@@ -260,67 +260,7 @@
 
 
         <!-- FORMULAIRE INSCRIPTION -->
-        <section class="py-5 bg-light" id="inscript">
-            <div class="container">
-
-                <h3 class="text-center mb-5">Inscription & Demande personnalisée</h3>
-
-                <div class="row">
-
-                <!-- Inscription au cours -->
-                <div class="col-lg-6 mb-4">
-                    <div class="card shadow-sm border-0 h-100">
-                    <div class="card-body">
-                        <h4 class="mb-4">Inscription au cours</h4>
-                        <form>
-                        <div class="form-group mb-3">
-                            <input type="text" class="form-control" placeholder="Nom complet">
-                        </div>
-                        <div class="form-group mb-3">
-                            <input type="email" class="form-control" placeholder="Email">
-                        </div>
-                        <div class="form-group mb-3">
-                            <input type="text" class="form-control" placeholder="Téléphone">
-                        </div>
-                        <div class="form-group mb-3">
-                            <select class="form-control">
-                            <option>Niveau du cours</option>
-                            <option>Base (gratuit)</option>
-                            <option>Intermédiaire</option>
-                            <option>Expert</option>
-                            </select>
-                        </div>
-                        <button class="btn btn-gradient btn-block">S'inscrire au cours</button>
-                        </form>
-                    </div>
-                    </div>
-                </div>
-
-                <!-- Demande personnalisée -->
-                <div class="col-lg-6 mb-4">
-                    <div class="card shadow-sm border-0 h-100">
-                    <div class="card-body">
-                        <h4 class="mb-4">Formation personnalisée</h4>
-                        <form>
-                        <div class="form-group mb-3">
-                            <input type="text" class="form-control" placeholder="Nom">
-                        </div>
-                        <div class="form-group mb-3">
-                            <input type="email" class="form-control" placeholder="Email">
-                        </div>
-                        <div class="form-group mb-3">
-                            <textarea class="form-control" rows="4"
-                            placeholder="Expliquez la formation que vous recherchez..."></textarea>
-                        </div>
-                        <button class="btn btn-gradient btn-block">Envoyer la demande</button>
-                        </form>
-                    </div>
-                    </div>
-                </div>
-
-                </div>
-            </div>
-        </section>
+        {% include 'includes/home/inscription.html' %}
 
 
 
