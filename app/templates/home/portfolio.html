@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<title>Portfolio - Nabii Nac </title>
+		{% include 'includes/home/head-home.html' %}
+	</head>
+
+	<body>
+		<!-- Page Preloder -->
+		<div id="preloder">
+			<div class="loader"></div>
+		</div>
+
+		<!-- header section -->
+		<header class="header-section">
+			{% include 'includes/home/header-home.html' %}
+		</header>
+		<!-- header section end-->
+
+
+		<!-- Header section  -->
+		<nav class="nav-section">
+			{% include 'includes/home/nav-home.html' %}
+		</nav>
+		<!-- Header section end -->
+
+
+		<!-- Breadcrumb section -->
+		<div class="site-breadcrumb">
+			<div class="container">
+				<a href="#"><i class="fa fa-home"></i> Acceuil</a> <i class="fa fa-angle-right"></i>
+				<span>Nos Images</span>
+			</div>
+		</div>
+		<!-- Breadcrumb section end -->
+
+
+		
+		<!-- Enquetes section -->
+		<section class="full-courses-section spad pt-0">
+			<div class="container-fluid">
+
+				<div class="section-title text-center">
+					<p>Découvrez ce qui a été découvert lors de notre enquête en images.</p>
+				</div>
+
+				<div class="enquete-slider owl-carousel">
+					<div class="enquete-slide">
+						<div class="section-title text-center">
+							<h4>ENQUÊTE ONG 1</h4>
+						</div>
+
+						<div class="gallery-section">
+							<div class="gallery">
+								<div class="grid-sizer"></div>
+								<div class="gallery-item gi-big set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/1.png') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/1.png') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/2.png') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/2.png') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/3.png') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/3.png') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item gi-long set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/5.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/5.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item gi-big set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/8.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/8.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item gi-long set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/4.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/4.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/6.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/6.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/7.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/7.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="enquete-slide">
+						<div class="section-title text-center">
+							<h4>ENQUÊTE ONG 2</h4>
+						</div>
+
+						<div class="gallery-section">
+							<div class="gallery">
+								<div class="grid-sizer"></div>
+								<div class="gallery-item gi-big set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/1.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/1.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/2.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/2.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/3.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/3.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item gi-long set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/5.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/5.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item gi-big set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/8.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/8.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item gi-long set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/4.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/4.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/6.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/6.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+								<div class="gallery-item set-bg" data-setbg="{{ url_for('static', filename='home/img/gallery/7.jpg') }}">
+									<a class="img-popup" href="{{ url_for('static', filename='home/img/gallery/7.jpg') }}"><i class="ti-plus"></i></a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		<!-- Enquetes section end-->
+
+
+		<!-- Newsletter section -->
+		<section class="newsletter-section">
+			{% include 'includes/home/newsletter-home.html' %}
+		</section>
+		<!-- Newsletter section end -->	
+
+
+		<!-- Footer section -->
+		<footer class="footer-section bg-dark text-white py-3">
+			{% include 'includes/home/footer-home.html' %}
+		</footer>
+		<!-- Footer section end-->
+
+
+
+		<!--====== Javascripts & Jquery ======-->
+		{% include 'includes/home/scripts-home.html' %}
+		
+	</body>
+
+</html>
