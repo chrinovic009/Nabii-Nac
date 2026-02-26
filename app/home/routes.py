@@ -90,4 +90,49 @@ def formation_1():
         page_active="formation_1",
     )
 
+# pour la page de formation-2
+@blueprint.route('/formation_2')
+def formation_2():
+
+    return render_template(
+        'home/formation-2.html',
+        page_active="formation_2",
+    )
+
+# pour la page de formation-3
+@blueprint.route('/formation_3')
+def formation_3():
+
+    return render_template(
+        'home/formation-3.html',
+        page_active="formation_3",
+    )
+
+# pour la page de formation-4
+@blueprint.route('/formation_4')
+def formation_4():
+
+    return render_template(
+        'home/formation-4.html',
+        page_active="formation_4",
+    )
+
+# pour la page de formation-5
+@blueprint.route('/formation_5')
+def formation_5():
+
+    return render_template(
+        'home/formation-5.html',
+        page_active="formation_5",
+    )
+
+# pour la page de formation-6
+@blueprint.route('/formation_6')
+def formation_6():
+
+    return render_template(
+        'home/formation-6.html',
+        page_active="formation_6",
+    )
+
 # ================================== FIN FORMATIONS =====================================
