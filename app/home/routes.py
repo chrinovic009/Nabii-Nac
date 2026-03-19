@@ -136,3 +136,39 @@ def formation_6():
     )
 
 # ================================== FIN FORMATIONS =====================================
+
+
+
+@blueprint.route('/sitemap.xml', methods=['GET'])
+def sitemap():
+    pages = [
+        {'loc': url_for('home', _external=True), 'priority': '1.0'},
+        {'loc': url_for('about', _external=True), 'priority': '0.8'},
+        {'loc': url_for('enquete', _external=True), 'priority': '0.8'},
+        {'loc': url_for('courses', _external=True), 'priority': '0.8'},
+        {'loc': url_for('blog', _external=True), 'priority': '0.8'},
+        {'loc': url_for('portfolio', _external=True), 'priority': '0.8'},
+        {'loc': url_for('contact', _external=True), 'priority': '0.8'},
+        {'loc': url_for('action', _external=True), 'priority': '0.8'},
+        {'loc': url_for('formation_1', _external=True), 'priority': '0.8'},
+        {'loc': url_for('formation_2', _external=True), 'priority': '0.8'},
+        {'loc': url_for('formation_3', _external=True), 'priority': '0.8'},
+        {'loc': url_for('formation_4', _external=True), 'priority': '0.8'},
+        {'loc': url_for('formation_5', _external=True), 'priority': '0.8'},
+        {'loc': url_for('formation_6', _external=True), 'priority': '0.8'},
+        # ajoute toutes tes pages importantes ici
+    ]
+    
+    xml_sitemap = ['<?xml version="1.0" encoding="UTF-8"?>']
+    xml_sitemap.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+    
+    for page in pages:
+        xml_sitemap.append('<url>')
+        xml_sitemap.append(f'<loc>{page["loc"]}</loc>')
+        xml_sitemap.append(f'<priority>{page["priority"]}</priority>')
+        xml_sitemap.append('</url>')
+    
+    xml_sitemap.append('</urlset>')
+    
+    response = Response("\n".join(xml_sitemap), mimetype='application/xml')
+    return response
