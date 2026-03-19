@@ -1,6 +1,6 @@
 from app.utils.home import blueprint
 from app import db, UPLOAD_FOLDER, csrf, socketio
-from flask import render_template, flash, redirect, url_for, jsonify, request
+from flask import render_template, flash, redirect, url_for, jsonify, request, Response
 from flask_login import current_user
 from sqlalchemy import func
 
@@ -142,20 +142,20 @@ def formation_6():
 @blueprint.route('/sitemap.xml', methods=['GET'])
 def sitemap():
     pages = [
-        {'loc': url_for('home', _external=True), 'priority': '1.0'},
-        {'loc': url_for('about', _external=True), 'priority': '0.8'},
-        {'loc': url_for('enquete', _external=True), 'priority': '0.8'},
-        {'loc': url_for('courses', _external=True), 'priority': '0.8'},
-        {'loc': url_for('blog', _external=True), 'priority': '0.8'},
-        {'loc': url_for('portfolio', _external=True), 'priority': '0.8'},
-        {'loc': url_for('contact', _external=True), 'priority': '0.8'},
-        {'loc': url_for('action', _external=True), 'priority': '0.8'},
-        {'loc': url_for('formation_1', _external=True), 'priority': '0.8'},
-        {'loc': url_for('formation_2', _external=True), 'priority': '0.8'},
-        {'loc': url_for('formation_3', _external=True), 'priority': '0.8'},
-        {'loc': url_for('formation_4', _external=True), 'priority': '0.8'},
-        {'loc': url_for('formation_5', _external=True), 'priority': '0.8'},
-        {'loc': url_for('formation_6', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.home', _external=True), 'priority': '1.0'},
+        {'loc': url_for('home_blueprint.about', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.enquete', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.courses', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.blog', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.portfolio', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.contact', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.action', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.formation_1', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.formation_2', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.formation_3', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.formation_4', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.formation_5', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.formation_6', _external=True), 'priority': '0.8'},
         # ajoute toutes tes pages importantes ici
     ]
     
