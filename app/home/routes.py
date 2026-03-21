@@ -135,6 +135,16 @@ def formation_6():
         page_active="formation_6",
     )
 
+# pour la page du blog_single 2
+@blueprint.route('/single_blog2')
+def single_blog2():
+
+    return render_template(
+        'home/blog_single_2.html',
+        page_active="single_blog2",
+    )
+
+
 # ================================== FIN FORMATIONS =====================================
 
 
