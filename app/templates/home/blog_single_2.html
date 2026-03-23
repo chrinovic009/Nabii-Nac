@@ -30,7 +30,8 @@
 		<!-- Breadcrumb section -->
 		<div class="site-breadcrumb">
 			<div class="container">
-				<a href="#"><i class="fa fa-home"></i> Acceuil</a> <i class="fa fa-angle-right"></i>
+				<a href="/"><i class="fa fa-home"></i> Acceuil</a> <i class="fa fa-angle-right"></i>
+				<a href="/blog"> Blog</a> <i class="fa fa-angle-right"></i>
 				<span>Partenariat NAC & Big Win Philanthropy</span>
 			</div>
 		</div>
@@ -48,7 +49,7 @@
 								<h3><a href="#">Partenariat NAC et Big Win Philanthropy : un modèle de collaboration pour la nutrition sur les enfants de moins de 5 ans</a></h3>
 								<div class="post-meta">
 									<span><i class="fa fa-calendar-o"></i> 23 Mar 2025</span>
-									<span><i class="fa fa-user"></i> Cathrine Zeta</span>
+									<span><i class="fa fa-user"></i> Nabii Academy Consulting</span>
 								</div>
 								<p>
 								Le partenariat entre NAC (Nabii Academy Consulting) et Big Win Philanthropy s’inscrit dans une dynamique stratégique visant à répondre à une problématique majeure de santé publique en République Démocratique du Congo : la malnutrition chronique chez les enfants de moins de cinq ans. Cette collaboration repose sur une approche fondée sur des données probantes, issues d’une évaluation qualitative approfondie menée dans les provinces du Kwango et du Kongo Central, où les taux de retard de croissance atteignent respectivement 60 % et 46 %, dépassant largement les seuils critiques établis par les standards internationaux.
@@ -95,8 +96,8 @@
 												<p>
 													Les résultats de cette évaluation confirment que la malnutrition en RDC reste un défi majeur de santé publique. Malgré les efforts engagés, les services de santé restent insuffisamment accessibles dans plusieurs zones, limitant la prise en charge efficace des enfants et des mères.
 												</p>
-												<a href="" class="c-btn">Aimer</a>
-												<a href="" class="c-btn">Repondre</a>
+												<a href="" class="c-btn"><span><i class="fa fa-heart"></i></a>
+												<a href="" class="c-btn"><span><i class="fa fa-envelope"></i></a>
 											</div>
 										</div>
 
@@ -110,8 +111,8 @@
 														<p>
 															Au niveau local, nous constatons que les pratiques alimentaires restent inadaptées, notamment durant les 1 000 premiers jours. Le manque d’information et les contraintes économiques influencent fortement les décisions des ménages.
 														</p>
-														<a href="" class="c-btn">Aimer</a>
-														<a href="" class="c-btn">Repondre</a>
+														<a href="" class="c-btn"><span><i class="fa fa-heart"></i></a>
+														<a href="" class="c-btn"><span><i class="fa fa-envelope"></i></a>
 													</div>
 												</div>
 											</li>
@@ -127,28 +128,14 @@
 												<p>
 													L’analyse met en évidence le caractère multisectoriel de la malnutrition. Les facteurs économiques, les inégalités de genre, ainsi que l’accès limité à l’eau et à l’assainissement jouent un rôle déterminant dans la persistance du retard de croissance chez les enfants.
 												</p>
-												<a href="" class="c-btn">Aimer</a>
-												<a href="" class="c-btn">Repondre</a>
+												<a href="" class="c-btn"><span><i class="fa fa-heart"></i></a>
+												<a href="" class="c-btn"><span><i class="fa fa-envelope"></i></a>
 											</div>
 										</div>
 									</li>
 								</ul>
 								<div class="comment-form-warp">
-									<h4 class="comment-title">Veuillez laisser votre commentaire</h4>
-									<form class="comment-form">
-										<div class="row">
-											<div class="col-sm-6">
-												<input type="text" placeholder="Votre Nom">
-											</div>
-											<div class="col-sm-6">
-												<input type="email" placeholder="Votre Email">
-											</div>
-											<div class="col-sm-12">
-												<textarea placeholder="Votre Message"></textarea>
-												<button class="site-btn">ENVOYER LE COMMENTAIRE</button>
-											</div>
-										</div>
-									</form>
+									{% include 'includes/home/form-blog.html' %}
 								</div>
 							</div>
 						</div>

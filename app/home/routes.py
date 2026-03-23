@@ -87,7 +87,7 @@ def formation_1():
 
     return render_template(
         'home/formation-1.html',
-        page_active="formation_1",
+        page_active="courses",
     )
 
 # pour la page de formation-2
@@ -96,7 +96,7 @@ def formation_2():
 
     return render_template(
         'home/formation-2.html',
-        page_active="formation_2",
+        page_active="courses",
     )
 
 # pour la page de formation-3
@@ -105,7 +105,7 @@ def formation_3():
 
     return render_template(
         'home/formation-3.html',
-        page_active="formation_3",
+        page_active="courses",
     )
 
 # pour la page de formation-4
@@ -114,7 +114,7 @@ def formation_4():
 
     return render_template(
         'home/formation-4.html',
-        page_active="formation_4",
+        page_active="courses",
     )
 
 # pour la page de formation-5
@@ -123,7 +123,7 @@ def formation_5():
 
     return render_template(
         'home/formation-5.html',
-        page_active="formation_5",
+        page_active="courses",
     )
 
 # pour la page de formation-6
@@ -132,7 +132,16 @@ def formation_6():
 
     return render_template(
         'home/formation-6.html',
-        page_active="formation_6",
+        page_active="courses",
+    )
+
+# pour la page du blog_single 1
+@blueprint.route('/single_blog1')
+def single_blog1():
+
+    return render_template(
+        'home/blog_single_1.html',
+        page_active="blog",
     )
 
 # pour la page du blog_single 2
@@ -141,7 +150,43 @@ def single_blog2():
 
     return render_template(
         'home/blog_single_2.html',
-        page_active="single_blog2",
+        page_active="blog",
+    )
+
+# pour la page du blog_single 3
+@blueprint.route('/single_blog3')
+def single_blog3():
+
+    return render_template(
+        'home/blog_single_3.html',
+        page_active="blog",
+    )
+
+# pour la page du blog_single 4
+@blueprint.route('/single_blog4')
+def single_blog4():
+
+    return render_template(
+        'home/blog_single_4.html',
+        page_active="blog",
+    )
+
+# pour la page du blog_single 5
+@blueprint.route('/single_blog5')
+def single_blog5():
+
+    return render_template(
+        'home/blog_single_5.html',
+        page_active="blog",
+    )
+
+# pour la page du blog_single 6
+@blueprint.route('/single_blog6')
+def single_blog6():
+
+    return render_template(
+        'home/blog_single_6.html',
+        page_active="blog",
     )
 
 
@@ -166,6 +211,12 @@ def sitemap():
         {'loc': url_for('home_blueprint.formation_4', _external=True), 'priority': '0.8'},
         {'loc': url_for('home_blueprint.formation_5', _external=True), 'priority': '0.8'},
         {'loc': url_for('home_blueprint.formation_6', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.single_blog1', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.single_blog2', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.single_blog3', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.single_blog4', _external=True), 'priority': '0.8'},
+        {'loc': url_for('home_blueprint.single_blog5', _external=True), '   priority': '0.8'},
+        {'loc': url_for('home_blueprint.single_blog6', _external=True), 'priority': '0.8'},
         # ajoute toutes tes pages importantes ici
     ]
     
