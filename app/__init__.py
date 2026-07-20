@@ -5,8 +5,7 @@ import logging
 from importlib import import_module
 from logging.handlers import RotatingFileHandler
 from flask import Flask, request, g
-from sqlalchemy.exc import IntegrityError
-from flask_dance.contrib.google import make_google_blueprint, google
+from flask_dance.contrib.google import make_google_blueprint
 
 from app.extensions import db, login_manager, migrate, bcrypt, socketio, mail, csrf
 from app.utils.authentication.models import User
@@ -15,6 +14,10 @@ from app.error_handlers import register_error_handlers
 
 # Détection de l'environnement
 IS_VERCEL = os.environ.get("VERCEL") == "1"
+
+# --- Définition globale pour permettre l'import dans les routes ---
+# Sur Vercel, on utilise /tmp car c'est le seul dossier inscriptible
+UPLOAD_FOLDER = os.path.join('/tmp', 'uploads') if IS_VERCEL else os.path.join(os.getcwd(), 'uploads')
 
 def register_extensions(app):
     db.init_app(app)
@@ -46,13 +49,10 @@ def create_app(config="app.config.Config"):
     # Configuration Vercel-friendly
     app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024
     app.config["PROPAGATE_EXCEPTIONS"] = True
-
-    # --- Gestion des fichiers (Uploads) ---
-    # N'utilisez que Cloudinary sur Vercel, pas de dossiers locaux
-    if not IS_VERCEL:
-        UPLOAD_FOLDER = os.path.join(os.getcwd(), 'uploads')
-        if not os.path.exists(UPLOAD_FOLDER):
-            os.makedirs(UPLOAD_FOLDER)
+    
+    # S'assurer que le dossier upload existe au démarrage
+    if not os.path.exists(UPLOAD_FOLDER):
+        os.makedirs(UPLOAD_FOLDER)
 
     @app.before_request
     def start_timer():
@@ -60,7 +60,6 @@ def create_app(config="app.config.Config"):
 
     @app.after_request
     def after_request_handler(response):
-        # Logging standard (Vercel le capte automatiquement)
         if hasattr(g, "start_time"):
             duration = round((time.time() - g.start_time) * 1000, 2)
             ip = request.headers.get("X-Forwarded-For", request.remote_addr)
@@ -68,7 +67,6 @@ def create_app(config="app.config.Config"):
                 ip = ip.split(",")[0].strip()
             app.logger.info(f"IP={ip} | {request.method} | {request.full_path} | STATUS={response.status_code} | {duration}ms")
 
-        # Security headers
         response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
         response.headers["X-Frame-Options"] = "DENY"
         response.headers["X-Content-Type-Options"] = "nosniff"
@@ -79,8 +77,7 @@ def create_app(config="app.config.Config"):
     register_custom_filters(app)
     register_error_handlers(app)
 
-    # --- Logs ---
-    # Sur Vercel, ne pas créer de fichier local. Les logs vont vers la console.
+    # Logs console pour Vercel
     if not app.debug and not IS_VERCEL:
         if not os.path.exists("logs"):
             os.makedirs("logs")
