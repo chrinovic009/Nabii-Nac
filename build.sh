@@ -1,2 +1,4 @@
 #!/bin/bash
-python3 -m pip install -r requirements.txt
+echo "Installation des dépendances..."
+pip install -r requirements.txt --verbose
+echo "Installation terminée."
